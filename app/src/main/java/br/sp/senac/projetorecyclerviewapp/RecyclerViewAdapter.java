@@ -17,9 +17,9 @@ import java.util.List;
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder> {
 
     private Context mContext;
-    private List<Livros> mData;
+    private List<Times> mData;
 
-    public RecyclerViewAdapter(Context mContext, List<Livros> mData) {
+    public RecyclerViewAdapter(Context mContext, List<Times> mData) {
         this.mContext = mContext;
         this.mData = mData;
     }
@@ -31,7 +31,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         View view;
 
         LayoutInflater mInflater = LayoutInflater.from(mContext);
-        view = mInflater.inflate(R.layout.cardview_item_livros, parent, false);
+        view = mInflater.inflate(R.layout.cardview_item_times, parent, false);
         return new MyViewHolder(view);
     }
 
@@ -39,14 +39,14 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
 
         //passando valores para o RecyclerView
-        holder.tvTituloLivro.setText(mData.get(position).getTitulo());
-        holder.imgLivro.setImageResource(mData.get(position).getMiniatura());
+        holder.tvTituloTime.setText(mData.get(position).getTitulo());
+        holder.imgTime.setImageResource(mData.get(position).getMiniatura());
         //Evento de clique no cardView
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(mContext, Livro_Activity.class);
+                Intent intent = new Intent(mContext, Time_Activity.class);
 
                 intent.putExtra("Titulo",mData.get(position).getTitulo());
                 intent.putExtra("Descricao",mData.get(position).getDescricao());
@@ -66,8 +66,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView tvTituloLivro;
-        ImageView imgLivro;
+        TextView tvTituloTime;
+        ImageView imgTime;
         CardView cardView;
 
 
@@ -75,11 +75,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
             super(itemView);
 
-            tvTituloLivro = itemView.findViewById(R.id.id_lblTituloLivro);
-            imgLivro =  itemView.findViewById(R.id.id_imgLivro);
+            tvTituloTime = itemView.findViewById(R.id.id_lblTituloTime);
+            imgTime =  itemView.findViewById(R.id.id_imgTime);
             cardView = itemView.findViewById(R.id.idCardView);
-
-
         }
     }
 }

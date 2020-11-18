@@ -1,6 +1,6 @@
 package br.sp.senac.projetorecyclerviewapp;
 
-public class Livros {
+public class Times {
 
     //Atributos globais
 
@@ -10,10 +10,10 @@ public class Livros {
     private int miniatura;
     
     //construtor vazio
-    public Livros() {
+    public Times() {
     }
     //construtor com parâmetros
-    public Livros(String titulo, String categoria, String descricao, int miniatura) {
+    public Times(String titulo, String categoria, String descricao, int miniatura) {
         this.titulo = titulo;
         this.categoria = categoria;
         this.descricao = descricao;

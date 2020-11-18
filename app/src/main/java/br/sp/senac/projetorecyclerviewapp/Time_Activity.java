@@ -7,19 +7,19 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class Livro_Activity extends AppCompatActivity {
+public class Time_Activity extends AppCompatActivity {
 
     private TextView txtTitulo, txtDescricao, txtCategoria;
-    private ImageView imagemLivro;
+    private ImageView imagemTime;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.livro_layout);
+        setContentView(R.layout.time_layout);
 
         txtTitulo = findViewById(R.id.txtIdTitulo);
         txtDescricao = findViewById(R.id.txtIdDescricao);
         txtCategoria = findViewById(R.id.txtIdCategoria);
-        imagemLivro =  findViewById(R.id.idImgLivroN);
+        imagemTime =  findViewById(R.id.idImgTimeN);
 
         Intent intent =  getIntent();
 
@@ -31,7 +31,6 @@ public class Livro_Activity extends AppCompatActivity {
         txtTitulo.setText(titulo);
         txtDescricao.setText(descricao);
         txtCategoria.setText(categoria);
-        imagemLivro.setImageResource(miniatura);
-
+        imagemTime.setImageResource(miniatura);
     }
 }
